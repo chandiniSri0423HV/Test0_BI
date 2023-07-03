@@ -23,7 +23,7 @@ stage('Deployment of IAR Files to OIC')
 steps
 {
 bat '''
-curl --location "https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/integrations/archive" --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --form "file=@"BIREPORT_CS_01.00.0000.iar"
+curl --location "https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/integrations/archive" --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --form "file=@"IPC_SFDC_OPPOR_TO_NS_PORTA_01.00.0000.iar"
 '''
 }
 }
@@ -36,7 +36,7 @@ curl --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --header "X-HT
 curl --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --header "X-HTTP-Method-Override:PATCH" --header "Content-Type:application/json" -d @restconnprop.json https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/connections/RESTCON_CS
 curl --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --header "X-HTTP-Method-Override:PATCH" --header "Content-Type:application/json" -d @ftpconnprop.json https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/connections/FTPCONN_CHANDANA
 curl --location --request PUT --header "Authorization: Basic ZGV2b3BzX3VzZXI6T2ljX0plbmtpbnMjMjAyMw==" --header "Content-Type:application/json" -d  @lookup.json https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/lookups/BIReport_CS
-curl --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --header "Content-Type:application/json" --header "X-HTTP-Method-Override:PATCH" -d @update.json curl --location "https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/integrations/BIREPORT_CS|01.00.0000"
+--curl --header "Authorization: Basic cG9jdXNlcjpIVk9JQ01heSMyMDIz" --header "Content-Type:application/json" --header "X-HTTP-Method-Override:PATCH" -d @update.json curl --location "https://testinstance-idevjxz332qf-ia.integration.ocp.oraclecloud.com/ic/api/integration/v1/integrations/IPC_SFDC_OPPOR_TO_NS_PORTA_01.00.0000.iar"
 '''
 }
 }
